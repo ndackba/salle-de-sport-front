@@ -59,12 +59,12 @@ src/app/
 
 ## Routing
 
-| Route                    | Composant       | Description                     |
-|---------------------------|-----------------|----------------------------------|
-| `/adherents`               | `AdherentList`  | Liste paginée des adhérents      |
-| `/adherents/new`           | `AdherentForm`  | Création d'un nouvel adhérent    |
-| `/adherents/:id`           | `AdherentDetail`| Détail d'un adhérent             |
-| `/adherents/:id/edit`      | `AdherentForm`  | Modification d'un adhérent       |
+| Route                 | Composant        | Description                   |
+| --------------------- | ---------------- | ----------------------------- |
+| `/adherents`          | `AdherentList`   | Liste paginée des adhérents   |
+| `/adherents/new`      | `AdherentForm`   | Création d'un nouvel adhérent |
+| `/adherents/:id`      | `AdherentDetail` | Détail d'un adhérent          |
+| `/adherents/:id/edit` | `AdherentForm`   | Modification d'un adhérent    |
 
 ## Configuration de l'API
 
@@ -76,7 +76,7 @@ L'URL de base de l'API est définie dans les fichiers d'environnement :
 ```typescript
 export const environment = {
   production: false,
-  apiUrl: 'http://localhost:8080/api'
+  apiUrl: 'http://localhost:8080/api',
 };
 ```
 
@@ -93,3 +93,4 @@ Un `HttpInterceptor` global (`error-handler-interceptor.ts`) intercepte toutes l
 ## Auteur
 
 Projet réalisé dans le cadre du bloc d'exercices Java/Web - Fil rouge "Salle de sport et abonnements".
+Prérequis : Java 21
