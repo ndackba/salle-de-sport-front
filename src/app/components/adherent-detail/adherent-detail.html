@@ -1,0 +1,11 @@
+<p *ngIf="loading">Chargement...</p>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+
+<div *ngIf="adherent">
+  <h2>{{ adherent.nom }} {{ adherent.prenom }}</h2>
+  <p><strong>Email :</strong> {{ adherent.email }}</p>
+  <p><strong>Date de naissance :</strong> {{ adherent.dateNaissance }}</p>
+
+  <a [routerLink]="['/adherents', adherent.id, 'edit']">Modifier</a> |
+  <a [routerLink]="['/adherents']">Retour à la liste</a>
+</div>

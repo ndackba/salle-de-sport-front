@@ -1,0 +1,41 @@
+<h2>{{ isEditMode ? 'Modifier' : 'Ajouter' }} un adhérent</h2>
+
+<p *ngIf="loading">Chargement...</p>
+<p *ngIf="errorMessage" style="color: red;">{{ errorMessage }}</p>
+
+<form [formGroup]="form" (ngSubmit)="onSubmit()" *ngIf="!loading">
+  <div>
+    <label>Nom :</label>
+    <input type="text" formControlName="nom">
+    <span style="color: red;" *ngIf="form.get('nom')?.invalid && form.get('nom')?.touched">
+      Le nom est requis (2 caractères minimum).
+    </span>
+  </div>
+
+  <div>
+    <label>Prénom :</label>
+    <input type="text" formControlName="prenom">
+    <span style="color: red;" *ngIf="form.get('prenom')?.invalid && form.get('prenom')?.touched">
+      Le prénom est requis (2 caractères minimum).
+    </span>
+  </div>
+
+  <div>
+    <label>Email :</label>
+    <input type="email" formControlName="email">
+    <span style="color: red;" *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+      Un email valide est requis.
+    </span>
+  </div>
+
+  <div>
+    <label>Date de naissance :</label>
+    <input type="date" formControlName="dateNaissance">
+    <span style="color: red;" *ngIf="form.get('dateNaissance')?.invalid && form.get('dateNaissance')?.touched">
+      La date de naissance est requise.
+    </span>
+  </div>
+
+  <button type="submit" [disabled]="form.invalid">Enregistrer</button>
+  <button type="button" (click)="cancel()">Annuler</button>
+</form>
